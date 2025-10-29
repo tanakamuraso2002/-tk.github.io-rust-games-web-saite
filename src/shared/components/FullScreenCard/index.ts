@@ -1,0 +1,1 @@
+export { FullScreenCard } from './FullScreenCard';

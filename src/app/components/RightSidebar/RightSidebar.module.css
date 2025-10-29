@@ -1,0 +1,45 @@
+.rightbar {
+  padding: 10px;
+}
+
+.geneCard {
+  background: #444;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardTitle {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.imageContainer {
+  margin: 20px 0;
+}
+
+.dnaImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cardDescription {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}

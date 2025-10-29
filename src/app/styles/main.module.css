@@ -1,0 +1,11 @@
+.main {
+  padding: 20px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 10px;
+  }
+}

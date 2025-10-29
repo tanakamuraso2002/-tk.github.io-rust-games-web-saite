@@ -1,0 +1,60 @@
+.tagButtons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tagBtn {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.tagBtn:hover {
+  background: #666;
+}
+
+.tagBtn.active {
+  background: #007bff;
+  transform: scale(1.05);
+}
+
+.resizeBtn {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.resizeIcon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  .tagBtn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .resizeBtn {
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .resizeIcon {
+    width: 14px;
+    height: 14px;
+  }
+}
