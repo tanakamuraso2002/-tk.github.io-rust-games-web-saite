@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './Footer.module.css';
+import styles from '@/components/Footer.module.css';
 
 const newsItems = [
   { id: 1, title: 'Rust Berry Update', description: 'ベリーシステム', image: '/news/News_Rust_Berry_20025.png' },
@@ -8,7 +8,7 @@ const newsItems = [
   { id: 4, title: '', description: 'Rustの最新情報', image: '/Rust_Logo.png' },
 ];
 
-export const Footer = () => {
+const Footer = () => {
   const duplicatedItems = [...newsItems, ...newsItems];
 
   return (
@@ -34,3 +34,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

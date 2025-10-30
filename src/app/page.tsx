@@ -6,7 +6,7 @@ import CardSlots from './components/CardSlots/CardSlots';
 import styles from './page.module.css';
 import mainStyles from './styles/main.module.css';
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={styles.page}>
       <Header />
@@ -19,4 +19,6 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;
