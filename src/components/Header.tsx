@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import styles from './Header.module.css';
+import styles from '@/components/Header.module.css';
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -23,3 +23,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

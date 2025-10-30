@@ -1,7 +1,7 @@
-import styles from "./RightSidebar.module.css";
-import { DRAGGABLE_CARDS, Card } from "@/data/cards";
+import styles from "@/components/RightSidebar/RightSidebar.module.css";
+import { Card, DRAGGABLE_CARDS } from "@/data";
 
-export default function RightSidebar() {
+const RightSidebar = () => {
   const handleDragStart = (e: React.DragEvent, card: Card) => {
     e.dataTransfer.setData("application/json", JSON.stringify(card));
   };
@@ -49,4 +49,6 @@ export default function RightSidebar() {
       </div>
     </aside>
   );
-}
+};
+
+export default RightSidebar;
