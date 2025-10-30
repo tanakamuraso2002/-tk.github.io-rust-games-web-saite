@@ -5,3 +5,15 @@
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
 }
+
+.content {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}

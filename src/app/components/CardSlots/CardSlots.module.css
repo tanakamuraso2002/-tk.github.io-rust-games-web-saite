@@ -1,0 +1,199 @@
+/* メインコンテナ - 3x3グリッドレイアウト */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列の等幅グリッド */
+  gap: 20px; /* グリッド間の余白 */
+  margin: 0 auto; /* 中央寄せ */
+}
+
+/* カードスロット - ドロップエリア */
+.slot {
+  aspect-ratio: 1; /* 正方形を維持 */
+  border: 2px dashed #ccc; /* 破線ボーダー */
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05); /* 半透明背景 */
+  transition: all 0.2s ease; /* スムーズなアニメーション */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* スロットホバー時の効果 */
+.slot:hover {
+  border-color: #ff6b6b; /* ボーダー色変更 */
+  background: rgba(255, 107, 107, 0.1); /* 背景色変更 */
+}
+
+/* ドラッグオーバー時の効果 */
+.slot.dragOver {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.2); /* より濃い背景 */
+  transform: scale(1.05); /* 少し拡大 */
+}
+
+/* 配置されたカード */
+.card {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* カード裏返し状態 */
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* カードドラッグ中の効果 */
+.card:active {
+  cursor: grabbing;
+}
+
+/* カードの表面 */
+.cardFront {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background: rgba(51, 51, 51, 0.9);
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: background 0.2s ease;
+}
+
+.cardFront:hover {
+  background: rgba(68, 68, 68, 0.9);
+}
+
+/* カードの裏面 */
+.cardBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+/* 裏面のパターン */
+.backPattern {
+  width: 80%;
+  height: 80%;
+  background: repeating-linear-gradient(
+    45deg,
+    #333,
+    #333 10px,
+    #555 10px,
+    #555 20px
+  );
+  border-radius: 4px;
+  position: absolute;
+}
+
+/* 裏面のテキスト */
+.backText {
+  color: #e0e0e0;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 8px;
+  border-radius: 4px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+/* カード内の画像 */
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-grow: 1;
+}
+
+/* カード名のスタイル */
+.cardName {
+  color: #e0e0e0;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin: 4px 0 2px 0;
+}
+
+/* ダメージ値のスタイル */
+.cardDamage {
+  color: #ff6b6b;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* 空スロットのプレースホルダー */
+.placeholder {
+  color: rgba(255, 255, 255, 0.4); /* 半透明白文字 */
+  font-size: 12px;
+  text-align: center;
+}
+
+/* スマホサイズ対応 */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr); /* 2列グリッド */
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .cardName {
+    font-size: 10px;
+  }
+  
+  .cardDamage {
+    font-size: 8px;
+  }
+  
+  .backText {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 5px;
+  }
+  
+  .slot {
+    border-width: 1px;
+  }
+  
+  .cardFront {
+    padding: 4px;
+  }
+  
+  .cardName {
+    font-size: 9px;
+    margin: 2px 0 1px 0;
+  }
+  
+  .cardDamage {
+    font-size: 7px;
+  }
+  
+  .placeholder {
+    font-size: 10px;
+  }
+}
